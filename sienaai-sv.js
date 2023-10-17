@@ -1,4 +1,4 @@
-// Hero
+// Hero 1
 function HeroCircles() {
   this.circles = document.querySelectorAll(".circles path");
   this.circleBig = this.circles[0];
