@@ -295,8 +295,8 @@ function TypeReply() {
   this.input = document.querySelector(".product-one__bottom div");
   this.icon = document.querySelector(".product-one__bottom svg path");
 
-  this.startingText = "Actually, I will want a bigger size. Can I have an M, please?";
-  this.thankYouText = "Perfect! I will get an M size. Thanks!";
+  this.startingText = "I want a replacement for my bag and a refund on the boots.";
+  this.thankYouText = "I'll have just the bag replaced as it arrived scratched. I will return the boots for a refund.";
 
   this.setSize();
 }
@@ -385,7 +385,7 @@ TypeReply.prototype.createPersonBubble = function(text) {
 TypeReply.prototype.createNeilBubble = function() {
     const clone = document.querySelector(".product__chat-item:nth-child(2)").cloneNode(true);
     clone.classList.add("clone");
-    clone.querySelector(".chat p").textContent = "Hey. 👋 Happy to help you with the return process. I can also exchange it with a bigger size. What do you think? 😊";
+    clone.querySelector(".chat p").textContent = "Hey Nora 👋 I got you! Do you want the same color for the bag? I can also exchange the boots. What do you think? 😊";
     this.container.firstElementChild.appendChild(clone);
 
     const y = clone.getBoundingClientRect().bottom - this.container.getBoundingClientRect().bottom - gsap.getProperty(this.container.firstElementChild, "y");
