@@ -1,0 +1,99 @@
+/* General Styles */
+.autoplay-video {
+  width: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+
+/* Disable Scroll */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Lenis Smooth Scrolling */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #15171A;
+}
+::-webkit-scrollbar-thumb {
+  background: #6F7174; 
+  border-radius: 100px;
+  border-color: red;
+  border: 0 5px 0 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFFF4F; 
+}
+
+/* Text Splitting - Prevent Flash of Unstyled Content */
+/* Main Text Styles */
+.p-leading[text-split],
+.p-body[text-split],
+.h2[text-split],
+.h3[hoverstagger],
+.h5[text-split],
+.h6[text-split],
+.h6[letters-fade-in],
+.c-rich-text__on-light-bg[text-split] p,
+.c-rich-text__on-light-bg[text-split] h2,
+.c-rich-text__on-dark-bg[text-split] p,
+.c-rich-text__on-dark-bg[text-split] h2 {
+  opacity: 0;
+}
+html.w-editor [text-split],
+html.w-editor .projects__tab-link,
+html.w-editor .projects__col-item,
+html.w-editor .journal__tab-link,
+html.w-editor .journals__col-item,
+html.w-editor .industries__item {
+  opacity: 1;
+}
+
+/* Word Styling for Animation */
+.word {
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.2em;
+  transform-origin: bottom;
+}
+
+/* Project, Journal, Industries Items Opacity */
+.projects__tab-link,
+.projects__col-item,
+.journal__tab-link,
+.journals__col-item,
+.industries__item {
+  opacity: 0;
+}
+
+/* Text Selection Styling */
+::selection {
+  background: #000000;
+  color: #FFFFFF;
+  text-shadow: none;
+}
+
+/* Header Image and Navbar Customization */
+.header-img {
+  opacity: 0;
+}
+.body-white .section__navbar:hover + .global .cursor-line-two {
+  background: #ffffff !important;
+}
