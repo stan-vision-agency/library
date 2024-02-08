@@ -314,11 +314,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Stagger cards
 document.addEventListener("DOMContentLoaded", function() {
-    staggerAnimation(".home-services__item", ".home-services__item", "y", 40);
-    staggerAnimation(".awards__tab-link", ".swiper-slide", "x", 40);
-    staggerAnimation(".swiper-slide", ".swiper-slide", "x", 40);
-    staggerAnimation(".blog__col-item", ".blog__col-item", "x", 40);
+    safeStaggerAnimation(".home-services__item", ".home-services__item", "y", 40);
+    safeStaggerAnimation(".awards__tab-link", ".swiper-slide", "x", 40);
+    safeStaggerAnimation(".swiper-slide", ".swiper-slide", "x", 40);
+    safeStaggerAnimation(".blog__col-item", ".blog__col-item", "x", 40);
 });
+
+function safeStaggerAnimation(elementSelector, triggerSelector, direction, distance) {
+    // Check if the element and trigger exist on the page
+    if (document.querySelector(elementSelector) && document.querySelector(triggerSelector)) {
+        staggerAnimation(elementSelector, triggerSelector, direction, distance);
+    }
+}
 
 function staggerAnimation(elementSelector, triggerSelector, direction, distance) {
     const animationProperties = {
@@ -337,6 +344,7 @@ function staggerAnimation(elementSelector, triggerSelector, direction, distance)
 
     gsap.from(elementSelector, animationProperties);
 }
+
 
 // Animate header highlitex color
 gsap.fromTo(
