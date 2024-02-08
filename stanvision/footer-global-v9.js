@@ -318,6 +318,8 @@ document.addEventListener("DOMContentLoaded", function() {
     safeStaggerAnimation(".awards__tab-link", ".swiper-slide", "x", 40);
     safeStaggerAnimation(".swiper-slide", ".swiper-slide", "x", 40);
     safeStaggerAnimation(".blog__col-item", ".blog__col-item", "x", 40);
+    // Added animation for ".related-projects-slide" with the same properties
+    safeStaggerAnimation(".related-projects-slide", ".related-projects-slide", "x", 40);
 });
 
 function safeStaggerAnimation(elementSelector, triggerSelector, direction, distance) {
@@ -344,7 +346,6 @@ function staggerAnimation(elementSelector, triggerSelector, direction, distance)
 
     gsap.from(elementSelector, animationProperties);
 }
-
 
 // Animate header highlitex color
 gsap.fromTo(
