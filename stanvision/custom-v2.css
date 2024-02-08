@@ -51,10 +51,10 @@ html.lenis {
 .h5[text-split],
 .h6[text-split],
 .h6[letters-fade-in],
-.c-rich-text__on-light-bg[text-split],
-.c-rich-text__on-light-bg[text-split],
-.c-rich-text__on-dark-bg[text-split],
-.c-rich-text__on-dark-bg[text-split] {
+.c-rich-text__on-light-bg[text-split] p,
+.c-rich-text__on-light-bg[text-split] h2,
+.c-rich-text__on-dark-bg[text-split] p,
+.c-rich-text__on-dark-bg[text-split] h2 {
   opacity: 0;
 }
 html.w-editor [text-split],
