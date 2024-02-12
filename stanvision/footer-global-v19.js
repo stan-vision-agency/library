@@ -399,6 +399,8 @@ function getGeneralSliderConfig(element) {
         keyboard: true,
         spaceBetween: 16,
         loop: false,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
         slideActiveClass: "is-active",
         slideDuplicateClass: "is-active",
         breakpoints: {
@@ -419,6 +421,8 @@ function getAwardsSliderConfig(element) {
         speed: 700,
         keyboard: true,
         spaceBetween: 16,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
         breakpoints: {
             480: { slidesPerView: 1, spaceBetween: 16 },
             768: { slidesPerView: 1.5, spaceBetween: 16 },
@@ -437,6 +441,8 @@ function getProductsSliderConfig(element) {
         speed: 700,
         keyboard: true,
         spaceBetween: 32,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: 0,
         breakpoints: {
             480: { slidesPerView: 1, spaceBetween: 16 },
             768: { slidesPerView: 1, spaceBetween: 16 },
