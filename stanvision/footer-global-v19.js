@@ -397,7 +397,6 @@ function getGeneralSliderConfig(element) {
         slidesPerView: 1.1,
         speed: 700,
         keyboard: true,
-        followFinger: false,
         spaceBetween: 16,
         loop: false,
         slideActiveClass: "is-active",
@@ -419,7 +418,6 @@ function getAwardsSliderConfig(element) {
         slidesPerView: 1.1,
         speed: 700,
         keyboard: true,
-        followFinger: false,
         spaceBetween: 16,
         breakpoints: {
             480: { slidesPerView: 1, spaceBetween: 16 },
@@ -438,7 +436,6 @@ function getProductsSliderConfig(element) {
         slidesPerView: 1,
         speed: 700,
         keyboard: true,
-        followFinger: false,
         spaceBetween: 32,
         breakpoints: {
             480: { slidesPerView: 1, spaceBetween: 16 },
