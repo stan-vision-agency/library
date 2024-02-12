@@ -381,10 +381,8 @@ document.addEventListener("DOMContentLoaded", setupCursorHoverEffects);
 
 // Swiper
 document.addEventListener("DOMContentLoaded", function() {
-    // Initialize the default/general slider first
     initializeSlider(".slider-main_component", getGeneralSliderConfig);
-    // Then, initialize the awards and products sliders
-    initializeSlider(".slider-main_component-awards.awards", getAwardsSliderConfig);
+    initializeSlider(".slider-main_component-awards", getAwardsSliderConfig);
     initializeSlider(".slider-main_component-products", getProductsSliderConfig);
 });
 
@@ -447,6 +445,5 @@ function getProductsSliderConfig(element) {
             768: { slidesPerView: 1, spaceBetween: 16 },
             992: { slidesPerView: 1, spaceBetween: 16, simulateTouch: false }
         }
-        // No navigation configuration provided, add if needed
     };
 }
