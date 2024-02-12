@@ -379,4 +379,43 @@ function setupCursorHoverEffects() {
 }
 document.addEventListener("DOMContentLoaded", setupCursorHoverEffects);
 
- 
+// Swiper
+document.addEventListener("DOMContentLoaded", function() {
+    initializeSwiperComponents(".slider-main_component");
+    initializeSwiperComponents(".slider-main_component-products");
+});
+
+function initializeSwiperComponents(swiperContainerClass) {
+    $(swiperContainerClass).each(function(index, element) {
+        let classSuffix = swiperContainerClass.replace(".", "") + "-" + index;
+        let swiperSelector = ".swiper-" + classSuffix;
+        let nextButtonSelector = ".swiper-next-" + classSuffix;
+        let prevButtonSelector = ".swiper-prev-" + classSuffix;
+
+        $(element).find(".swiper").addClass("swiper-" + classSuffix);
+        $(element).find(".swiper-next").addClass("swiper-next-" + classSuffix);
+        $(element).find(".swiper-prev").addClass("swiper-prev-" + classSuffix);
+
+        new Swiper(swiperSelector, getSwiperConfig(swiperSelector, nextButtonSelector, prevButtonSelector));
+    });
+}
+
+function getSwiperConfig(swiperSelector, nextButtonSelector, prevButtonSelector) {
+    return {
+        slidesPerView: 1.1,
+        speed: 700,
+        keyboard: true,
+        followFinger: false,
+        spaceBetween: 16,
+        breakpoints: {
+            480: { slidesPerView: 1, spaceBetween: 16 },
+            768: { slidesPerView: 1.5, spaceBetween: 16 },
+            992: { slidesPerView: 3.5, spaceBetween: 16, simulateTouch: false }
+        },
+        navigation: {
+            nextEl: nextButtonSelector,
+            prevEl: prevButtonSelector,
+            disabledClass: "is-disabled"
+        }
+    };
+}
