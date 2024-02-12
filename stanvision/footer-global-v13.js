@@ -318,8 +318,8 @@ document.addEventListener("DOMContentLoaded", function() {
     staggerAnimation(".awards__tab-link", ".swiper-slide", "x", 40);
     staggerAnimation(".swiper-slide", ".swiper-slide", "x", 40);
     staggerAnimation(".blog__col-item", ".blog__col-item", "x", 40);
-    // Added animation for ".related-projects-slide" with the same properties
     staggerAnimation(".related-projects-slide", ".related-projects-slide", "x", 40);
+    staggerAnimation(".projects__col-item", ".projects__col-item", "y", 40);
 });
 
 function staggerAnimation(elementSelector, triggerSelector, direction, distance) {
