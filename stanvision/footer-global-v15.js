@@ -321,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function() {
     staggerAnimation(".related-projects-slide", ".related-projects-slide", "x", 40);
     staggerAnimation(".projects__col-item", ".projects__col-item", "y", -40);
     staggerAnimation(".journals__col-item", ".journals__col-item", "y", -40);
-    staggerAnimation(".journals__tab-pane", ".journals__tab-pane, "x", 40);
+    staggerAnimation(".journal__tab-link", ".journal__tab-link", "x", 40);
 });
 
 function staggerAnimation(elementSelector, triggerSelector, direction, distance) {
