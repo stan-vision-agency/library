@@ -342,7 +342,7 @@ function staggerAnimation(elementSelector, triggerSelector, direction, distance)
     };
 
     animationProperties[direction] = distance;
-    gsap.fromTo(elementSelector, {opacity: 0}, animationProperties);
+    gsap.fromTo(elementSelector, {opacity: 0}, {...animationProperties, opacity: 1});
 }
 
 // Animate header highlitex color
