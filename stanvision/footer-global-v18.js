@@ -381,26 +381,42 @@ document.addEventListener("DOMContentLoaded", setupCursorHoverEffects);
 
 // Swiper
 document.addEventListener("DOMContentLoaded", function() {
-    initializeSwiperComponents(".slider-main_component");
-    initializeSwiperComponents(".slider-main_component-products");
+    // Initialize the default/general slider first
+    initializeSlider(".slider-main_component", getGeneralSliderConfig);
+    // Then, initialize the awards and products sliders
+    initializeSlider(".slider-main_component-awards.awards", getAwardsSliderConfig);
+    initializeSlider(".slider-main_component-products", getProductsSliderConfig);
 });
 
-function initializeSwiperComponents(swiperContainerClass) {
-    $(swiperContainerClass).each(function(index, element) {
-        let classSuffix = swiperContainerClass.replace(".", "") + "-" + index;
-        let swiperSelector = ".swiper-" + classSuffix;
-        let nextButtonSelector = ".swiper-next-" + classSuffix;
-        let prevButtonSelector = ".swiper-prev-" + classSuffix;
-
-        $(element).find(".swiper").addClass("swiper-" + classSuffix);
-        $(element).find(".swiper-next").addClass("swiper-next-" + classSuffix);
-        $(element).find(".swiper-prev").addClass("swiper-prev-" + classSuffix);
-
-        new Swiper(swiperSelector, getSwiperConfig(swiperSelector, nextButtonSelector, prevButtonSelector));
+function initializeSlider(selector, configFunction) {
+    $(selector).each(function() {
+        new Swiper($(this).find(".swiper")[0], configFunction(this));
     });
 }
 
-function getSwiperConfig(swiperSelector, nextButtonSelector, prevButtonSelector) {
+function getGeneralSliderConfig(element) {
+    return {
+        slidesPerView: 1.1,
+        speed: 700,
+        keyboard: true,
+        followFinger: false,
+        spaceBetween: 16,
+        loop: false,
+        slideActiveClass: "is-active",
+        slideDuplicateClass: "is-active",
+        breakpoints: {
+            480: { slidesPerView: 1, spaceBetween: 16 },
+            768: { slidesPerView: 1.5, spaceBetween: 16 },
+            992: { slidesPerView: 2.5, spaceBetween: 16, simulateTouch: false }
+        },
+        navigation: {
+            nextEl: $(element).find(".swiper-next")[0],
+            prevEl: $(element).find(".swiper-prev")[0],
+            disabledClass: "is-disabled"
+        }
+    };
+}
+function getAwardsSliderConfig(element) {
     return {
         slidesPerView: 1.1,
         speed: 700,
@@ -413,9 +429,24 @@ function getSwiperConfig(swiperSelector, nextButtonSelector, prevButtonSelector)
             992: { slidesPerView: 3.5, spaceBetween: 16, simulateTouch: false }
         },
         navigation: {
-            nextEl: nextButtonSelector,
-            prevEl: prevButtonSelector,
+            nextEl: $(element).find(".swiper-next")[0],
+            prevEl: $(element).find(".swiper-prev")[0],
             disabledClass: "is-disabled"
         }
+    };
+}
+function getProductsSliderConfig(element) {
+    return {
+        slidesPerView: 1,
+        speed: 700,
+        keyboard: true,
+        followFinger: false,
+        spaceBetween: 32,
+        breakpoints: {
+            480: { slidesPerView: 1, spaceBetween: 16 },
+            768: { slidesPerView: 1, spaceBetween: 16 },
+            992: { slidesPerView: 1, spaceBetween: 16, simulateTouch: false }
+        }
+        // No navigation configuration provided, add if needed
     };
 }
