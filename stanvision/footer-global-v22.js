@@ -382,22 +382,31 @@ $(".span-wrapper").each(function(index) {
 function setupCursorHoverEffects() {
   const cursorWrapper = $('.cursor-lines__wrapper');
 
+  // Target elements for hover effect
   $('.swiper, .projects__item').hover(
     function() {
+      // Check if the hovered element is a Swiper slider
       const isSwiper = $(this).hasClass('swiper');
       if (isSwiper) {
+        // Apply drag effect for Swiper items
         gsap.to(cursorWrapper, { scale: 1.5, opacity: 0.7, ease: "Power1.easeOut", duration: 0.3 });
+        $('.cursor-line-one, .cursor-line-two').addClass('cursor-drag');
       } else {
+        // Apply view-project effect for project items
         gsap.to(cursorWrapper, { scale: 1, opacity: 1, ease: "Power1.easeOut", duration: 0.3 });
+        $('.cursor-line-one, .cursor-line-two').addClass('cursor-view-project');
       }
     }, 
     function() {
+      // Reset to default state when not hovering
       gsap.to(cursorWrapper, { scale: 1, opacity: 1, ease: "Power1.easeIn", duration: 0.3 });
+      $('.cursor-line-one, .cursor-line-two').removeClass('cursor-drag cursor-view-project');
     }
   );
 }
 
 document.addEventListener("DOMContentLoaded", setupCursorHoverEffects);
+
 
 
 // Swiper
