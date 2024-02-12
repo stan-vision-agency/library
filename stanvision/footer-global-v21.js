@@ -364,20 +364,41 @@ $(".span-wrapper").each(function(index) {
 });
 
 // Add cursor style changes based on mouse hover events (change to DRAG)
-function setupCursorHoverEffects() {
-  $('.swiper, .projects__item').each(function() {
-    const cursorWrapper = $('.cursor-lines__wrapper');
-    const isSwiper = $(this).hasClass('swiper');
-    const addClass = isSwiper ? 'drag' : 'view-project';
-    const removeClass = isSwiper ? 'drag' : 'view-project';
+// function setupCursorHoverEffects() {
+//   $('.swiper, .projects__item').each(function() {
+//     const cursorWrapper = $('.cursor-lines__wrapper');
+//     const isSwiper = $(this).hasClass('swiper');
+//     const addClass = isSwiper ? 'drag' : 'view-project';
+//     const removeClass = isSwiper ? 'drag' : 'view-project';
 
-    $(this).hover(
-      () => cursorWrapper.addClass(addClass),
-      () => cursorWrapper.removeClass(removeClass)
-    );
-  });
+//     $(this).hover(
+//       () => cursorWrapper.addClass(addClass),
+//       () => cursorWrapper.removeClass(removeClass)
+//     );
+//   });
+// }
+// document.addEventListener("DOMContentLoaded", setupCursorHoverEffects);
+
+function setupCursorHoverEffects() {
+  const cursorWrapper = $('.cursor-lines__wrapper');
+
+  $('.swiper, .projects__item').hover(
+    function() {
+      const isSwiper = $(this).hasClass('swiper');
+      if (isSwiper) {
+        gsap.to(cursorWrapper, { scale: 1.5, opacity: 0.7, ease: "Power1.easeOut", duration: 0.3 });
+      } else {
+        gsap.to(cursorWrapper, { scale: 1, opacity: 1, ease: "Power1.easeOut", duration: 0.3 });
+      }
+    }, 
+    function() {
+      gsap.to(cursorWrapper, { scale: 1, opacity: 1, ease: "Power1.easeIn", duration: 0.3 });
+    }
+  );
 }
+
 document.addEventListener("DOMContentLoaded", setupCursorHoverEffects);
+
 
 // Swiper
 document.addEventListener("DOMContentLoaded", function() {
