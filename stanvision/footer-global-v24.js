@@ -319,9 +319,9 @@ document.addEventListener("DOMContentLoaded", function() {
     staggerAnimation(".swiper-slide", ".swiper-slide", "x", 40);
     staggerAnimation(".blog__col-item", ".blog__col-item", "x", 40);
     staggerAnimation(".related-projects-slide", ".related-projects-slide", "x", 40);
-    staggerAnimation(".projects__col-item", ".projects__col-item", "y", -40);
-    staggerAnimation(".journals__col-item", ".journals__col-item", "y", -40);
-    staggerAnimation(".journal__tab-link", ".journal__tab-link", "x", 40);
+    staggerAnimation(".projects__col-item", ".projects__col-item", "y", "-40");
+    staggerAnimation(".journals__col-item", ".journals__col-item", "y", "-40");
+    staggerAnimation(".journal__tab-link", ".journal__tab-link", "x", "-40");
 });
 
 function staggerAnimation(elementSelector, triggerSelector, direction, distance) {
@@ -340,7 +340,8 @@ function staggerAnimation(elementSelector, triggerSelector, direction, distance)
         duration: 0.6,
         stagger: 0.1,
         ease: "Power2.easeOut",
-        delay: 0.4
+        delay: 0.4,
+        opacity: 1;
     };
 
     animationProperties[direction] = distance;
