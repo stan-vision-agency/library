@@ -363,7 +363,7 @@ $(".span-wrapper").each(function(index) {
   relatedElement.appendTo($(this));
 });
 
-Add cursor style changes based on mouse hover events (change to DRAG)
+//Add cursor style changes based on mouse hover events (change to DRAG)
 function setupCursorHoverEffects() {
   $('.swiper, .projects__item').each(function() {
     const cursorWrapper = $('.cursor-lines__wrapper');
