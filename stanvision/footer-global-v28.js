@@ -314,15 +314,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Stagger cards
 document.addEventListener("DOMContentLoaded", function() {
-    staggerAnimation(".home-services__item", ".home-services__item", "y", 40);
-    staggerAnimation(".awards__tab-link", ".swiper-slide", "x", 40);
-    staggerAnimation(".swiper-slide", ".swiper-slide", "x", 40);
-    staggerAnimation(".blog__col-item", ".blog__col-item", "x", 40);
-    staggerAnimation(".related-projects-slide", ".related-projects-slide", "x", 40);
-    staggerAnimation(".projects__col-item", ".projects__col-item", "y", 40);
-    staggerAnimation(".projects__tab-link", ".projects__tab-link", "x", 40);
-    staggerAnimation(".journals__col-item", ".journals__col-item", "y", 40);
-    staggerAnimation(".journal__tab-link", ".journal__tab-link", "x", 40);
+    staggerAnimation(".home-services__item", ".home-services__item", "y", 0);
+    staggerAnimation(".awards__tab-link", ".swiper-slide", "x", 0);
+    staggerAnimation(".swiper-slide", ".swiper-slide", "x", 0);
+    staggerAnimation(".blog__col-item", ".blog__col-item", "x", 0);
+    staggerAnimation(".related-projects-slide", ".related-projects-slide", "x", 0);
+    staggerAnimation(".projects__col-item", ".projects__col-item", "y", 0);
+    staggerAnimation(".projects__tab-link", ".projects__tab-link", "x", 0);
+    staggerAnimation(".journals__col-item", ".journals__col-item", "y", 0);
+    staggerAnimation(".journal__tab-link", ".journal__tab-link", "x", 0);
 });
 
 function staggerAnimation(elementSelector, triggerSelector, direction, distance) {
