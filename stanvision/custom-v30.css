@@ -30,27 +30,28 @@ html.lenis {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #15171A;
+  background: #15171a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #6F7174; 
+  background: #6f7174;
   border-radius: 100px;
   border-color: red;
   border: 0 5px 0 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #BFFF4F; 
+  background: #bfff4f;
 }
 
 /* Text Splitting - Prevent Flash of Unstyled Content */
 /* Main Text Styles */
+[text-split],
 .p-leading[text-split],
 .p-body[text-split],
+.p-body[text-split2],
 .h2[text-split],
-.h3[hoverstagger],
 .h5[text-split],
 .h6[text-split],
-.h6[letters-fade-in],
+.h6[letters-fade-in]
 /* .c-rich-text__on-light-bg[text-split] p,
 .c-rich-text__on-light-bg[text-split] h2,
 .c-rich-text__on-dark-bg[text-split] p,
@@ -58,6 +59,8 @@ html.lenis {
   opacity: 0;
 }
 html.w-editor [text-split],
+html.w-editor [text-split2],
+html.w-editor .p-body[text-split2],
 html.w-editor .projects__tab-link,
 html.w-editor .projects__col-item,
 html.w-editor .journal__tab-link,
@@ -74,19 +77,18 @@ html.w-editor .industries__item {
   transform-origin: bottom;
 }
 
-/* Project, Journal, Industries Items Opacity */
-.projects__tab-link,
-.projects__col-item,
-.journal__tab-link,
-.journals__col-item,
-.industries__item {
+/* Hide elements for stagger - above the fold */
+.projects__tab-link.stagger-horizontal,
+.projects__col-item.grid-item,
+.journal__tab-link.stagger-horizontal,
+.journals__col-item.stagger-vertical {
   opacity: 0;
 }
 
 /* Text Selection Styling */
 ::selection {
   background: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: none;
 }
 
@@ -96,4 +98,15 @@ html.w-editor .industries__item {
 }
 .body-white .section__navbar:hover + .global .cursor-line-two {
   background: #ffffff !important;
+}
+
+/*.Accordion styling */
+.accordion-item {
+  border-bottom: 1px solid #2f3337;
+}
+.accordion-item:last-child {
+  border-bottom: none;
+}
+.accordion-content {
+  overflow: hidden;
 }
