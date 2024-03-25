@@ -208,6 +208,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       ScrollTrigger.create({
         trigger: triggerElement,
         start: "top 95%",
+        markers: true,
         onEnter: () => timeline.play(),
       });
     }
